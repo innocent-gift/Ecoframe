@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        /* Footer Styles */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        
+        /* Form Styles */
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+        
+        .contact-form h2 {
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+            min-height: 120px;
+            font-family: Arial, sans-serif;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        /* Success Message */
+        .success-message {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #d4edda;
+            color: #155724;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <footer>
+        <section class="contact-form">
+            <h2>Contact Me</h2>
+            <form id="messageForm">
+                <textarea name="text" id="message" placeholder="Type your message here..." required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="successMessage" class="success-message">
+                Your message has been submitted successfully!
+            </div>
+        </section>
+    </footer>
+
+    <script>
+        document.getElementById('messageForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent the default form submission
+            
+            // Get the message from the textarea
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the data to a server
+            // For demonstration, we'll simulate a successful submission
+            simulateFormSubmission(message);
+        });
+        
+        function simulateFormSubmission(message) {
+            console.log('Message submitted:', message);
+            
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block';
+            
+            // Clear the form
+            document.getElementById('message').value = '';
+            
+            // Hide the success message after 3 seconds
+            setTimeout(function() {
+                successMessage.style.display = 'none';
+            }, 3000);
+            
+            // In a real application, you would:
+            // 1. Send the data to a server using fetch() or XMLHttpRequest
+            // 2. Handle the response
+            // 3. Show appropriate messages based on success/error
+        }
+        
+        // Example of how you would actually submit to a server:
+        /*
+        function submitToServer(message) {
+            fetch('your-server-endpoint', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({message: message}),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                showSuccessMessage();
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                showErrorMessage();
+            });
+        }
+        */
+    </script>
+</body>
+</html>

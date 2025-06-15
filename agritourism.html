@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Experience sustainable agriculture and agritourism at Green Heaven. Enjoy farm tours, fresh produce, and eco-friendly education.">
+  <meta name="keywords" content="Agritourism, Green Heaven, Farm Tours, Sustainable Agriculture, Eco Farm">
+  <title>GREEN HEAVEN - Agriculture & AgriTourism</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4fff4;
+      color: #2e4d2e;
+    }
+
+    header {
+      background-color: #6ab04c;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      z-index: 1000;
+    }
+
+    header.scrolled {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    nav {
+      background-color: #558b2f;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 30px;
+    }
+
+    .cta-button {
+      background-color: #82e082;
+      padding: 10px 20px;
+      border: none;
+      color: #2e4d2e;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .cta-button:hover {
+      background-color: #a5d6a7;
+    }
+
+    footer {
+      background-color: #33691e;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .social-media {
+      margin-top: 20px;
+    }
+
+    .social-media a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding-top: 20px;
+    }
+
+    .gallery img {
+      max-width: 300px;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GREEN HEAVEN</h1>
+    <p>Fresh Agriculture & Unique AgriTourism Experience</p>
+  </header>
+
+  <nav class="main-nav">
+    <a href="#about">About Us</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+    <a href="apply.html">Apply</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Welcome to GREEN HEAVEN, your paradise of sustainable agriculture and unforgettable agritourism. We specialize in cultivating fresh fruits and vegetables while offering interactive tours and farm experiences for visitors.</p>
+    <p>We invite students, tourists, and anyone interested in agriculture to visit our farm. Learn how food is grown, take part in eco-friendly practices, and enjoy a relaxing escape into nature. Whether you're looking to study farming methods or just spend a fun day with family, GREEN HEAVEN is the perfect place!</p>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>Fruit and Vegetable Farming</li>
+      <li>Farm Tours and Education</li>
+      <li>Farm-to-Table Experiences</li>
+      <li>Local Produce Market</li>
+    </ul>
+    <button class="cta-button" onclick="bookTour()">Book a Farm Tour</button>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/300x200?text=Farm+View" alt="Farm View">
+      <img src="https://via.placeholder.com/300x200?text=Fresh+Produce" alt="Fresh Produce">
+      <img src="https://via.placeholder.com/300x200?text=Tour+Group" alt="Tour Group">
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:info@greenheaven.com">info@greenheaven.com</a></p>
+    <p>Phone: +123-456-7890</p>
+    <p>Location: Green Valley, Nature District</p>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <input type="text" id="subject" placeholder="Subject" required>
+      <textarea id="message" placeholder="Message or Tour Booking Request" rows="4" required></textarea>
+      <button class="cta-button" type="submit">Submit</button>
+    </form>
+    <form class="newsletter-form">
+      <h3>Subscribe to our Newsletter</h3>
+      <input type="email" placeholder="Enter your email" required>
+      <button class="cta-button" type="submit">Subscribe</button>
+    </form>
+    <div class="social-media">
+      <h3>Follow us on Social Media</h3>
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">Twitter</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 GREEN HEAVEN. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mainNav = document.querySelector('.main-nav');
+
+        if (mobileMenuBtn) {
+          mobileMenuBtn.addEventListener('click', function() {
+              mainNav.classList.toggle('active');
+              this.querySelector('i').classList.toggle('fa-times');
+              this.querySelector('i').classList.toggle('fa-bars');
+          });
+        }
+
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 100);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    if (mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
+                        if (mobileMenuBtn) {
+                          mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                          mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+                        }
+                    }
+                }
+            });
+        });
+
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+                alert(`Thank you, ${name}! Your message has been received. We'll contact you soon at ${email}.`);
+                contactForm.reset();
+            });
+        }
+
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                alert(`Thank you for subscribing with ${email}! You'll receive our next newsletter.`);
+                this.reset();
+            });
+        }
+    });
+
+    function bookTour() {
+      alert("Thank you for your interest in our farm tours! We will contact you soon.");
+    }
+  </script>
+</body>
+</html>

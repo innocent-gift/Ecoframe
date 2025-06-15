@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Media Query Activity</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #333;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+    }
+
+    .box {
+      flex: 1;
+      padding: 20px;
+      background-color: lightblue;
+      text-align: center;
+    }
+
+    /* ✅ Media Query: triggers when screen width is 600px or less */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      .container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Responsive Layout</h1>
+  <p>Resize the window to see the font and layout change using media queries.</p>
+
+  <div class="container">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+  </div>
+</body>
+
+</html>
